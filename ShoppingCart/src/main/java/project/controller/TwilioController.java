@@ -1,0 +1,41 @@
+package project.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.twilio.Twilio;
+import com.twilio.rest.api.v2010.account.Message;
+
+@RestController
+@RequestMapping("/Twilio")
+public class TwilioController {
+
+	
+	public static final String ACCOUNT_SID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+    public static final String AUTH_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
+	
+	
+	
+	@RequestMapping("/greeting")
+	public String greeting() {
+		sendSMS();
+		return "greeting";
+	}
+	
+	
+	  public Message sendSMS() {
+	        Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
+	        Message message = Message.creator(
+	                new com.twilio.type.PhoneNumber("+972542335127"),//The phone number you are sending text to
+	                new com.twilio.type.PhoneNumber("+12056357868"),//The Twilio phone number
+	                "Sent from matan's application !!!!!")
+	           .create();
+
+	        return message;
+	    }
+	
+	
+	
+	
+	
+}
