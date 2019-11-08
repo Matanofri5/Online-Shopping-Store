@@ -1,7 +1,11 @@
 package project.beans;
 
-import javax.persistence.Column;
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -14,21 +18,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "EMPLOYEE")
+@Table(name = "Products")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Employee {
+public class Products {
 
+	
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	private long id;
-	
-	@Column(nullable = false, name = "firstName")
-	private String firstName;
-	
-	@Column(nullable = false, name = "lastName")
-	private String lastName;
+	private long productId;
 	
 	
+	private String productName;
+	
+	private double productPrice;
+	
+	@Enumerated(EnumType.STRING)
+	private Category category;
+	
+	 
 }

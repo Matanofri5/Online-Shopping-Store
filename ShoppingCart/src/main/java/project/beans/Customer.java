@@ -1,10 +1,14 @@
 package project.beans;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -23,15 +27,18 @@ public class Customer {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 	
-	@Column(nullable = false, name = "firstName")
 	private String firstName;
 	
-	@Column(nullable = false, name = "lastName")
 	private String lastName;
 	
-	@Column(nullable = false, name = "amount")
+	private String phoneNumber;
+	
 	private double amount;
 	
+	private double balance;
+	
+	@OneToMany(cascade= CascadeType.ALL)
+	private List<Products> products;
 	
 
 }

@@ -9,18 +9,21 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import project.beans.Customer;
-import project.services.EmployeeService;
+import project.services.CustomerService;
+import project.services.impl.CustomerServiceImpl;
 
 @RestController
-@RequestMapping("/employee")
-public class EmployeeController {
+@RequestMapping("/customer")
+public class CustomerController {
 
 	@Autowired
-	private EmployeeService employeeService;
+	private CustomerServiceImpl customerService;
+	
+	
 	
 	@PostMapping("/createCustomer")
 	public ResponseEntity<Customer> createCustomer(@RequestBody Customer customer){
-		customer = employeeService.CreateCustomer(customer);
+		customer = customerService.CreateCustomer(customer);
 		ResponseEntity<Customer> result = new ResponseEntity<Customer>(customer,HttpStatus.OK);
 		return result;
 	}
