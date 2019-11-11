@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 @Table(name = "CUSTOMER")
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 public class Customer {
 	
 	@Id
@@ -31,14 +30,27 @@ public class Customer {
 	
 	private String lastName;
 	
+	private String password;
+	
 	private String phoneNumber;
-	
-	private double amount;
-	
+		
 	private double balance;
 	
 	@OneToMany(cascade= CascadeType.ALL)
 	private List<Products> products;
+
+	public Customer(long id, String firstName, String lastName, String phoneNumber, double balance,
+			List<Products> products) {
+		super();
+		this.id = id;
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.phoneNumber = phoneNumber;
+		this.balance = balance;
+		this.products = products;
+	}
+	
+	
 	
 
 }

@@ -29,7 +29,6 @@ public class Products {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long productId;
 	
-	
 	private String productName;
 	
 	private double productPrice;

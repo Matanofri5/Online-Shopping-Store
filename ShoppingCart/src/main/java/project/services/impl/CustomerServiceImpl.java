@@ -1,9 +1,13 @@
 package project.services.impl;
 
 import project.beans.Customer;
+import project.beans.Products;
 
 public interface CustomerServiceImpl {
 
-	Customer CreateCustomer(Customer customer);
+	void setCustomer(Customer customer);
 
+	Customer purchaseProduct(Products product) throws Exception;
+
+	
 }
