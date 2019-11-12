@@ -7,7 +7,7 @@ public interface CustomerServiceImpl {
 
 	void setCustomer(Customer customer);
 
-	Customer purchaseProduct(Products product) throws Exception;
+	Customer purchaseProduct(long productId) throws Exception;
 
 	
 }

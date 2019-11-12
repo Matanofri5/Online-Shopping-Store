@@ -12,10 +12,22 @@ public interface ManagerServiceImpl {
 
 	void updateCustomer(Customer customer, String phoneNumber);
 
-	void deleteCustomerName(String customerName) throws CustomerDoesntExist;
-
+	Customer customerById(long id);
+	
 	List<Customer> getAllCustomers();
 
 	Products createProduct(Products products);
+
+	List<Products> getAllProducts();
+
+	void updateProduct(Products product, double productPrice);
+
+	void deleteCustomer(long customerId) throws CustomerDoesntExist;
+
+	void deleteProduct(long productId) throws Exception;
+
+	Products productById(long id);
+
+	
 
 }

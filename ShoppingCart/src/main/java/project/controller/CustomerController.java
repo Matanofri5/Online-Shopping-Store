@@ -5,13 +5,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import project.beans.Customer;
-import project.beans.Products;
 import project.services.impl.CustomerServiceImpl;
 
 @RestController
@@ -21,14 +16,14 @@ public class CustomerController {
 	@Autowired
 	private CustomerServiceImpl customerServiceImpl;
 	
-	@PostMapping("/purchaseProduct")
-	public ResponseEntity<String> purchaseProduct(@RequestBody Products p){
+	@PostMapping("/purchaseProduct/{productId}")
+	public ResponseEntity<String> purchaseProduct(@PathVariable long productId){
 		try {
-			customerServiceImpl.purchaseProduct(p);
-			return new ResponseEntity<>("This customer buy " + p, HttpStatus.OK);
+			customerServiceImpl.purchaseProduct(productId);
+			return new ResponseEntity<>("This customer buy ", HttpStatus.OK);
 
 		} catch (Exception e) {
-			return new ResponseEntity<>("This customer cannot buy anymore, please settle your debt !!!!" , HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<>(e.getMessage()+"Hi, you're unable to buy anymore, please settle your debt !!!!" , HttpStatus.UNAUTHORIZED);
 		}
 	}
 }

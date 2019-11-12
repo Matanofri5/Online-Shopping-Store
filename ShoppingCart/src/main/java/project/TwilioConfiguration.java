@@ -1,4 +1,4 @@
-package project.controller;
+package project;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -7,13 +7,22 @@ import org.springframework.web.bind.annotation.RestController;
 import com.twilio.Twilio;
 import com.twilio.rest.api.v2010.account.Message;
 
+//@RestController
+//@RequestMapping("/Twilio")
 @Service
-public class TwilioController {
+public class TwilioConfiguration {
 
 	
 	public static final String ACCOUNT_SID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
     public static final String AUTH_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 	
+	
+	
+//	@RequestMapping("/greeting")
+//	public String greeting() {
+//		sendSMS();
+//		return "greeting";
+//	}
 	
 	
 	  public Message sendSMS() {
