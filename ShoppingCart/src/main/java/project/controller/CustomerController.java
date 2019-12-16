@@ -20,10 +20,10 @@ public class CustomerController {
 	public ResponseEntity<String> purchaseProduct(@PathVariable long productId){
 		try {
 			customerServiceImpl.purchaseProduct(productId);
-			return new ResponseEntity<>("This customer buy ", HttpStatus.OK);
+			return new ResponseEntity<>("Customer purchase completed", HttpStatus.OK);
 
 		} catch (Exception e) {
-			return new ResponseEntity<>(e.getMessage()+"Hi, you're unable to buy anymore, please settle your debt !!!!" , HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<>(e.getMessage()+"Hi, something went wrong with your purchase" , HttpStatus.UNAUTHORIZED);
 		}
 	}
 }
