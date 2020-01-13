@@ -1,5 +1,6 @@
 package project.beans;
 
+import java.math.BigInteger;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import org.springframework.data.annotation.Id;
@@ -16,9 +17,9 @@ import lombok.NoArgsConstructor;
 @Component
 public class CustomerReceipt {
 
-//	@Id
-//	@GeneratedValue(strategy = GenerationType.IDENTITY)
-//	private long receiptNumber;
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private BigInteger receiptNumber;
 	
 	private String customerName;
 

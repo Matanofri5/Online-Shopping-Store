@@ -16,6 +16,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerServiceImpl customerServiceImpl;
 	
+	
 	@PostMapping("/purchaseProduct/{productId}")
 	public ResponseEntity<String> purchaseProduct(@PathVariable long productId){
 		try {
@@ -23,7 +24,7 @@ public class CustomerController {
 			return new ResponseEntity<>("Customer purchase completed", HttpStatus.OK);
 
 		} catch (Exception e) {
-			return new ResponseEntity<>(e.getMessage()+"Hi, something went wrong with your purchase" , HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<>("Hi, you're exceeded from your balance, please settle your debt !!   " +e.getMessage(), HttpStatus.UNAUTHORIZED);
 		}
 	}
 }

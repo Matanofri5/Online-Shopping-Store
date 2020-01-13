@@ -15,10 +15,6 @@ public class ShoppingCartApplication {
 	public static void main(String[] args) {
 		ApplicationContext context = SpringApplication.run(ShoppingCartApplication.class, args);
 		System.out.println("Starting ShoppingCart Application !!!!!!");
-		
-//		DetailsRepository details = context.getBean(DetailsRepository.class);
-//		CustomerReceipt customerDetails = new CustomerReceipt(1, "matan", 434343);
-//		details.save(customerDetails);
 
 	}
 
