@@ -8,11 +8,8 @@ import com.twilio.rest.api.v2010.account.Message;
 @Service
 public class TwilioConfiguration {
 
-	
-
-	public static final String ACCOUNT_SID = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-    public static final String AUTH_TOKEN = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
-	
+	public static final String ACCOUNT_SID = "AC02cfaac3068c69cf5dda4cbd3a8b2281";
+    public static final String AUTH_TOKEN = "c819506315ea8e500c074b6f4e04b382";
 	
 	
 	  public Message sendSMS() {

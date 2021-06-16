@@ -1,5 +1,7 @@
 package project.beans;
 
+import java.util.ArrayList;
+
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
@@ -26,9 +28,10 @@ public class Products {
 	private String productName;
 	
 	private double productPrice;
-		
+			
 	@Enumerated(EnumType.STRING)
 	private Category category;
+
 	
 	 
 }

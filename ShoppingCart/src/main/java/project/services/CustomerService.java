@@ -1,5 +1,8 @@
 package project.services;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import project.DateFormatter;
@@ -70,6 +73,12 @@ public class CustomerService implements CustomerServiceImpl, LoginInterface{
 		
 		customerRepository.save(customer);
 		return customer;
+	}
+	
+	@Override
+	public Products checkSales (double price) {
+		return productsRepository.findByproductPriceLessThan(price);
+		
 	}
 
 	

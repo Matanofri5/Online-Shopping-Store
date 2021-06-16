@@ -6,4 +6,6 @@ import project.beans.Products;
 
 public interface ProductsRepository extends JpaRepository<Products, Long>{
 
+	Products findByproductPriceLessThan (double productPrice);
+	
 }

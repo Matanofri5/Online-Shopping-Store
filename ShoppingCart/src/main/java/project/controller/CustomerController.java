@@ -1,12 +1,18 @@
 package project.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import project.beans.Customer;
+import project.beans.Products;
 import project.services.impl.CustomerServiceImpl;
 
 @RestController
@@ -22,9 +28,18 @@ public class CustomerController {
 		try {
 			customerServiceImpl.purchaseProduct(productId);
 			return new ResponseEntity<>("Customer purchase completed", HttpStatus.OK);
+			
 
 		} catch (Exception e) {
-			return new ResponseEntity<>("Hi, you're exceeded from your balance, please settle your debt !!   " +e.getMessage(), HttpStatus.UNAUTHORIZED);
+			return new ResponseEntity<>("Something went wrong with the purchase ", HttpStatus.UNAUTHORIZED);
 		}
 	}
+	
+	@GetMapping("/checkSales/{price}")
+	public Products checkSales(@PathVariable double price) {
+		return customerServiceImpl.checkSales(price);
+	}
+	
+	
+
 }

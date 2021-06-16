@@ -9,5 +9,8 @@ public interface CustomerServiceImpl {
 
 	Customer purchaseProduct(long productId) throws Exception;
 
+	Products checkSales(double price);
+
+
 	
 }
