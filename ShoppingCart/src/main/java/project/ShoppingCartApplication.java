@@ -10,7 +10,6 @@ import project.beans.CustomerReceipt;
 import project.repository.CustomerReceiptRepository;
 
 @SpringBootApplication
-@SpringBootConfiguration
 @ComponentScan({ "project" })
 public class ShoppingCartApplication {
 
