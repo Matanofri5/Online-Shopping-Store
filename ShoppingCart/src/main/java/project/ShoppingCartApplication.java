@@ -9,7 +9,6 @@ import org.springframework.context.annotation.ComponentScan;
 import project.beans.CustomerReceipt;
 import project.repository.CustomerReceiptRepository;
 
-
 @SpringBootApplication
 @SpringBootConfiguration
 @ComponentScan({ "project" })
