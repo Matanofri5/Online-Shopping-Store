@@ -1,6 +1,5 @@
 package project.controller;
 
-import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -9,9 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import project.beans.Customer;
 import project.beans.Products;
 import project.services.impl.CustomerServiceImpl;
 
@@ -34,6 +32,11 @@ public class CustomerController {
 			return new ResponseEntity<>("Something went wrong with the purchase ", HttpStatus.UNAUTHORIZED);
 		}
 	}
+	
+//	@PostMapping("/purchaseProduct")
+//	public ResponseEntity<String>purchaseProduct(@RequestParam String productName){
+//		
+//	}
 	
 	@GetMapping("/checkSales/{price}")
 	public Products checkSales(@PathVariable double price) {
