@@ -21,7 +21,7 @@ import project.services.impl.ManagerServiceImpl;
 @RestController
 @RequestMapping("/manager")
 public class ManagerController {
-
+	
 	@Autowired
 	private ManagerServiceImpl managerService;
 

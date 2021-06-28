@@ -1,5 +1,6 @@
 package project.services;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -96,7 +97,14 @@ public class ManagerService implements ManagerServiceImpl{
 	
 	@Override
 	public List<Products> getAllProducts(){
-		return productsRepository.findAll();
+        List<Products> products = new ArrayList<Products>(productsRepository.findAll());
+        boolean prod = products.isEmpty();
+		if (prod == true) {
+			System.out.println("The store is empty");
+		} else {
+			return productsRepository.findAll();
+		}
+		return products;
 	}
 	
 	

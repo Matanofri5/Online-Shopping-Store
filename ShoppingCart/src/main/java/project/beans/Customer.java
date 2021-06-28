@@ -32,6 +32,7 @@ public class Customer {
 	private String phoneNumber;
 
 	private double balance;
+	
 
 	@OneToMany(cascade = CascadeType.ALL)
 	private List<Products> products;

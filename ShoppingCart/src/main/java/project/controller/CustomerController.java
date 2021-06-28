@@ -33,10 +33,6 @@ public class CustomerController {
 		}
 	}
 	
-//	@PostMapping("/purchaseProduct")
-//	public ResponseEntity<String>purchaseProduct(@RequestParam String productName){
-//		
-//	}
 	
 	@GetMapping("/checkSales/{price}")
 	public Products checkSales(@PathVariable double price) {
