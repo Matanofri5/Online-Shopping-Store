@@ -9,9 +9,9 @@ import project.DateFormatter;
 import project.LoginInterface;
 import project.TwilioConfiguration;
 import project.beans.Customer;
-import project.beans.CustomerReceipt;
+//import project.beans.CustomerReceipt;
 import project.beans.Products;
-import project.repository.CustomerReceiptRepository;
+//import project.repository.CustomerReceiptRepository;
 import project.repository.CustomerRepository;
 import project.repository.ProductsRepository;
 import project.services.impl.CustomerServiceImpl;
@@ -25,17 +25,17 @@ public class CustomerService implements CustomerServiceImpl, LoginInterface{
 	@Autowired
 	private ProductsRepository productsRepository;
 	
-	@Autowired
-	private CustomerReceiptService customerReceiptService;
+//	@Autowired
+//	private CustomerReceiptService customerReceiptService;
 	
-	@Autowired
-	private CustomerReceiptRepository crRepo;
+//	@Autowired
+//	private CustomerReceiptRepository crRepo;
 	
 	@Autowired
 	private TwilioConfiguration twilio;
 	
-	@Autowired
-	private CustomerReceipt cReceipt;
+//	@Autowired
+//	private CustomerReceipt cReceipt;
 	
 	
 	
@@ -64,12 +64,12 @@ public class CustomerService implements CustomerServiceImpl, LoginInterface{
 			customer.setBalance(customer.getBalance()-product.getProductPrice());
 		}
 		
-		customerReceiptService.makeReceipt(cReceipt);
-		cReceipt.setCustomerName(customer.getFirstName());
-		cReceipt.setPurchaseDate(DateFormatter.getCurrentDate());
-		cReceipt.setProduct(product.getProductName());
-		cReceipt.setPrice(product.getProductPrice());
-		crRepo.save(cReceipt);
+//		customerReceiptService.makeReceipt(cReceipt);
+//		cReceipt.setCustomerName(customer.getFirstName());
+//		cReceipt.setPurchaseDate(DateFormatter.getCurrentDate());
+//		cReceipt.setProduct(product.getProductName());
+//		cReceipt.setPrice(product.getProductPrice());
+//		crRepo.save(cReceipt);
 		
 		customerRepository.save(customer);
 		return customer;
